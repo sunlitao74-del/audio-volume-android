@@ -1,0 +1,26 @@
+# Android / Gradle generated files
+.gradle/
+**/build/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# IDE files
+.idea/
+*.iml
+
+# Signing material and local secrets
+*.jks
+*.keystore
+keystore.properties
+.env
+.env.*
+google-services.json
+
+# Installable artifacts
+*.apk
+*.aab
+
+# Obsolete local dependency retained only in the working copy
+app/libs/ffmpeg-kit-free71-7.1.5-arm64-v8a.aar

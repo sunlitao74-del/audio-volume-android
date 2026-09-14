@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.personal.audiovolume'
+    compileSdk 35
+    buildToolsVersion '35.0.1'
+
+    defaultConfig {
+        applicationId 'com.personal.audiovolume'
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName '1.0'
+        ndk {
+            abiFilters 'arm64-v8a'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            // Keep the bundled open-source license texts inside the APK.
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+        resources {
+            excludes += ['META-INF/**', '**/*.kotlin_metadata']
+        }
+    }
+}
+
+dependencies {
+    implementation files('libs/ffmpeg-kit-audio-8.1.7-arm64-v8a-x86_64.aar')
+    implementation 'com.arthenica:smart-exception-java:0.2.1'
+}
